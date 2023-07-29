@@ -19,7 +19,7 @@ const usaProxy = new Proxy(usa, {
     if (value === undefined) console.log("Property not found!");
 
     // if (value !== undefined) return value;
-    return Reflect.get(target, prop);
+    if (value !== undefined) return Reflect.get(target, prop);
   },
 });
 
